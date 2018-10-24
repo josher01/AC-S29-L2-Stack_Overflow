@@ -6,7 +6,7 @@ namespace :dev do
     TITLE_LIST = ["產品經理", "軟體工程師", "藝術總監", "會計師", "平面設計師", "硬體工程師", "品質驗證師", "專案經理", "人資"]
     20.times do |i|
       name = FFaker::Name::first_name
-      file = File.open(Rails.root.join("public/avatar/user#{i+1}.jpg"))
+      file = "https://randomuser.me//api//portraits//women//#{i}.jpg"
       user = User.create!(
         name: name,
         email: "#{name}@stackoverflow.com",
