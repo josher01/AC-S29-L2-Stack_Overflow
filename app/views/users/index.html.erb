@@ -4,7 +4,11 @@
     <div class="card-group col-lg-3 col-md-4 col-sm-6 pb-5">
       <div class="card p-2"> 
         <span>
-          <%= image_tag user.avatar, size: '100x100', class: 'img-fluid img-thumbnail' %>
+          <% if user.avatar? %>
+            <%= image_tag user.avatar, size: '100x100', class: 'img-fluid img-thumbnail' %>
+          <% else %> 
+            <%= image_tag "https://randomuser.me//api//portraits//women//#{user.id}.jpg", size: '100x100', class: 'img-fluid img-thumbnail' %>
+          <% end %>
           <span class="pl-5">Questions: <%=  user.questions.size %><br><%= link_to user.name, user_path(user.id) %></span>
         </span>
         <p class="card-text h5 pt-3">

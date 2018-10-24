@@ -13,6 +13,8 @@ class User < ApplicationRecord
   has_many :question_upvotes, dependent: :destroy
   has_many :upvote_questions, through: :question_upvotes, source: :question
 
+  validates :name, presence: true, uniqueness: true
+
   def admin?
     self.role == "admin"
   end
