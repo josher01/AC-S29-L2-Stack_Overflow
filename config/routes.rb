@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   get "/search", to: "tags#search"
   resources :tags, only: [:index, :show] 
-  resources :users, only: [:edit, :show, :index]
+  resources :users, only: [:edit, :show, :index, :update]
 
 
   namespace :admin do
