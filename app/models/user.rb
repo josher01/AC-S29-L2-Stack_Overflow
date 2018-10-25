@@ -25,6 +25,7 @@ class User < ApplicationRecord
         user.uid = auth.uid
         user.password = Devise.friendly_token[0,20]
         user.email = auth.info.email
+        user.name = auth.info.name
         user.introduction = auth.info.description if auth.info.description
         user.github = auth.info["urls"]["GitHub"] if auth.info["urls"]["GitHub"]
     end
